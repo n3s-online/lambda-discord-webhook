@@ -16,6 +16,8 @@ Use this repository as a starting place to automate discord messages. This packa
 ## Getting started
 1. Create a webhook to call in Discord by following [these instructions](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks).
 2. Fork this repository and pull locally
+   - To change the schedule edit the `cronRule` in `bin/src.ts`
+   - To modify the discord message edit the `handler` method in `src/lambdaHandler.ts`
 3. Create a `.env` file (using `.env.example` as an example). Use the URL from the webhook's "Copy Webhook URL" button on discord for `DISCORD_WEBHOOK_URL`.
 4. Run `npm run build` to ensure everything works
 5. Run `cdk deploy` to deploy!

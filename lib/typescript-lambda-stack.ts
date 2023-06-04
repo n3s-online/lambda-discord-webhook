@@ -7,6 +7,7 @@ import * as path from 'path';
 
 interface TypescriptLambdaStackProps extends cdk.StackProps {
   environment: Record<string, string>;
+  cronRule: CronOptions;
 }
 
 export class TypescriptLambdaStack extends cdk.Stack {
@@ -20,11 +21,8 @@ export class TypescriptLambdaStack extends cdk.Stack {
       environment: props.environment
     });
 
-    // 10:15PM in PST
-    const cronRule: CronOptions = { minute: '18', hour: '5' };
-
     const rule = new cdk.aws_events.Rule(this, 'Rule', {
-      schedule: cdk.aws_events.Schedule.cron(cronRule)
+      schedule: cdk.aws_events.Schedule.cron(props.cronRule)
     });
 
     rule.addTarget(new cdk.aws_events_targets.LambdaFunction(typeScriptLambda));
