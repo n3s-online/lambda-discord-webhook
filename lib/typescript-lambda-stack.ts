@@ -18,7 +18,8 @@ export class TypescriptLambdaStack extends cdk.Stack {
       runtime: Runtime.NODEJS_14_X,
       entry: path.join(__dirname, '../src/lambdaHandler.ts'),
       handler: 'handler',
-      environment: props.environment
+      environment: props.environment,
+      timeout: cdk.Duration.seconds(30)
     });
 
     const rule = new cdk.aws_events.Rule(this, 'Rule', {

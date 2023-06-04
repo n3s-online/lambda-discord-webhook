@@ -24,6 +24,7 @@ Use this repository as a starting place to automate discord messages. This packa
    - Use this whenever you want to test your lambda code without deploying. Make sure to build first
 5. Run `cdk deploy` to deploy!
    - You'll want to re-run this any time you want to deploy new code to the lambda, or you set a new schedule
+   - If you encounter a timeout issue, try modifying the timeout in `lib/typescript-lambda-stack.ts`
 
 ## Architecture
 This package utilizies [AWS CDK](https://aws.amazon.com/cdk/), a tool which is used to set up AWS Infrastucture using code.
