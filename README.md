@@ -1,11 +1,6 @@
 # lambda-discord-bot
 
-Simple template for setting up a scheduled lambda function that triggers a discord bot to send a message.
-
-# Things to work on:
-
-1. Set up .env.example
-3. Set up discord bot
+Simple template for setting up a scheduled lambda function that triggers a discord webhook to send a message.
 
 # Welcome to your CDK TypeScript project
 
