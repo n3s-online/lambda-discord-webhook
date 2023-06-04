@@ -20,8 +20,10 @@ Use this repository as a starting place to automate discord messages. This packa
    - To modify the discord message edit the `handler` method in `src/lambdaHandler.ts`
 3. Create a `.env` file (using `.env.example` as an example). Use the URL from the webhook's "Copy Webhook URL" button on discord for `DISCORD_WEBHOOK_URL`.
 4. Run `npm run build` to ensure everything works
+5. Run `npm run test-local` to ensure the webhook is sending messages to the discord channel
+   - Use this whenever you want to test your lambda code without deploying. Make sure to build first
 5. Run `cdk deploy` to deploy!
-   - You'll want ot re-run this any time you update your lambda's code
+   - You'll want to re-run this any time you want to deploy new code to the lambda, or you set a new schedule
 
 ## Architecture
 This package utilizies [AWS CDK](https://aws.amazon.com/cdk/), a tool which is used to set up AWS Infrastucture using code.

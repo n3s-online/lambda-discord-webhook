@@ -14,7 +14,8 @@
       "yarn.lock",
       "node_modules",
       "test",
-      "assets"
+      "assets",
+      "bin/runLocal*"
     ]
   },
   "context": {

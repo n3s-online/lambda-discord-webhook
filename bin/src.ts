@@ -16,8 +16,8 @@ const environment: EnvironmentVariables = {
 
 // Cron Rule is in UTC
 const cronRule: CronOptions = {
-  hour: '18',
-  minute: '20'
+  hour: '19',
+  minute: '22'
 };
 
 new TypescriptLambdaStack(app, 'TypescriptLambdaStack', {
