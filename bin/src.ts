@@ -15,8 +15,8 @@ const lambdaEvent: LambdaEvent = {
 };
 // Cron Rule is in UTC
 const cronRule: CronOptions = {
-  hour: '22',
-  minute: '45'
+  hour: '18',
+  minute: '00'
 };
 
 new TypescriptLambdaStack(app, 'TypescriptLambdaStack', {
