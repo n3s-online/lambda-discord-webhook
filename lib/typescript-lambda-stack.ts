@@ -7,6 +7,7 @@ import * as path from "path";
 import { LambdaEvent } from "../src/lambdaHandler";
 
 interface TypescriptLambdaStackProps extends cdk.StackProps {
+  environment: Record<string, string>;
   events: {
     schedule: CronOptions;
     event: LambdaEvent;
@@ -22,6 +23,7 @@ export class TypescriptLambdaStack extends cdk.Stack {
       entry: path.join(__dirname, "../src/lambdaHandler.ts"),
       handler: "handler",
       timeout: cdk.Duration.seconds(30),
+      environment: props.environment,
     });
 
     props.events.forEach((event, i) => {

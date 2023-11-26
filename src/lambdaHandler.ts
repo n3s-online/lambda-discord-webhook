@@ -1,6 +1,7 @@
 import { Handler } from "aws-lambda";
 import { Webhook } from "discord-webhook-node";
 import * as z from "zod";
+import { environmentSchema } from "./environment";
 
 export const lambdaEventSchema = z.object({
   DISCORD_WEBHOOK_URL: z.string(),
@@ -10,8 +11,8 @@ export const lambdaEventSchema = z.object({
 export type LambdaEvent = z.infer<typeof lambdaEventSchema>;
 
 export const handler: Handler = async (event: LambdaEvent, context) => {
-  const { DISCORD_WEBHOOK_URL, DISCORD_WEBHOOK_USERNAME } =
-    lambdaEventSchema.parse(event);
+  const { DISCORD_WEBHOOK_URL } = environmentSchema.parse(process.env);
+  const { DISCORD_WEBHOOK_USERNAME } = lambdaEventSchema.parse(event);
 
   const hook = new Webhook(DISCORD_WEBHOOK_URL);
   if (DISCORD_WEBHOOK_USERNAME) {
