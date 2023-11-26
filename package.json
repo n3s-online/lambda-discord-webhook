@@ -7,7 +7,8 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "test-local": "node bin/runLocal.js",
+    "test-local": "node dist/bin/runLocal.js",
+    "local": "npm run build && npm run test-local",
     "cdk": "cdk"
   },
   "devDependencies": {
